@@ -14,6 +14,6 @@ COPY pom.xml /usr/src/app
 RUN mvn -f /usr/src/app/pom.xml clean install
 
 FROM gcr.io/distroless/java  
-COPY --from=build /usr/src/app/target/helloworld-1.0.0-SNAPSHOT.jar /usr/app/helloworld-1.0.0-SNAPSHOT.jar  
+COPY --from=build /usr/src/app/target/test-0.0.1-SNAPSHOT.jar /usr/app/test-0.0.1-SNAPSHOT.jar
 EXPOSE 8080  
-ENTRYPOINT ["java","-jar","/usr/app/helloworld-1.0.0-SNAPSHOT.jar"]  
+ENTRYPOINT ["java","-jar","/usr/app/test-0.0.1-SNAPSHOT.jar"]  
